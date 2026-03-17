@@ -1,15 +1,16 @@
 {
-  "name": "cy-intercept",
+  "name": "cy-environment",
   "version": "1.0.0",
-  "description": "Cypress Intercept",
+  "description": "Cypress Environment",
   "main": "index.js",
   "scripts": {
     "test": "npx cypress run"
   },
-  "author": "ernestosbarbosa",
+  "author": "Pedro Ricardo",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.6.3",
+    "cypress": "^13.17.0",
+    "dotenv": "^17.3.1",
     "puppeteer": "^21.9.0"
   }
 }
