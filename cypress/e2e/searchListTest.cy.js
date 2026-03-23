@@ -10,14 +10,14 @@ describe('Environment Variables', () => {
 
   })
 
-  categories.forEach(category => {
-    it(`Validação categoria ${category.name}`, () => {
+    it(`Deve Pesquisar os produtos e ter um valor listado`, () => {
       homePage.openSearchProduct()
-      homePage.openCategoriesFilter()
-      homePage.categories().should('be.visible')
-      homePage.getCategory(category.name).should('exist')
+      homePage.seachProduct('in')
+      homePage.products().should('have.length.greaterThan', 0) 
+      homePage.products().each(product => {
+        let price = product.find('[data-testid="price"]').text()
+        expect(price).to.contain('R$')
+      })
     })
 
   })
-
-})
